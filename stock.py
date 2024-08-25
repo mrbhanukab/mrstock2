@@ -5,8 +5,8 @@ import telegram
 
 
 async def send_message(ticker, company_name, latest_update, closing_price, previous_close, intradaychange):
-    bot = telegram.Bot(token="5970479672:AAH17INZd_4NvnrIj221zZzUSwk7kOxpp6M")
-    chat_id = "962648693"
+    bot = telegram.Bot(token="")
+    chat_id = ""
     message = f"<b><u>{company_name} | {ticker}</u></b>\n\n<i>⌛ {latest_update}</i>\n\n<b>Closing Price:</b> {closing_price}\n<b>Previous Close:</b> {previous_close}\n<b>Intra-Day Change:</b> {intradaychange}\n"
     message += "\n<b><a href='https://www.marketwatch.com/investing/stock/{}/charts?countrycode=lk&mod=mw_quote_advanced'>View Advance Chart 📊</a></b>".format(ticker)
     await bot.send_message(chat_id=chat_id, text=message, parse_mode="HTML")
